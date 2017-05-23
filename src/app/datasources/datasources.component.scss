@@ -1,0 +1,77 @@
+.clearfix {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 10vh;
+    display: inline-flex;
+    box-sizing: border-box;
+    background: #fcfcfc;
+}
+
+.datasource-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 80px 40px;
+}
+
+.datasource {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 130px;
+    text-align: center;
+    color: rgba(44, 52, 62, .9);
+
+    box-sizing: border-box;
+    padding: 20px 16px;
+    cursor: pointer;
+    margin: 10px 5px;
+    margin-top: 0;
+
+    border: 2px solid #fcfcfc;
+}
+
+.datasource.new {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+}
+
+.datasource span {
+    font-size: 60px;
+    line-height: 50px;
+    opacity: .8;
+    position: relative;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: -8px;
+    margin-left: 2px;
+}
+.datasource.new span {
+    font-size: 40px;
+    line-height: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.datasource img {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 50px;
+    right: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px rgba(64, 64, 64, 0.5);
+}
+
+.datasource p {
+    padding-top: 20px;
+    margin: 0;;
+    font-size: 14px;
+    margin-top: 10px;
+}

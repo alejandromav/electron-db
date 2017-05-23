@@ -1,5 +1,6 @@
 try {
     const electron = require('electron');
+    const { ipcMain } = require('electron');
 
     // Module to control application life.
     const { app } = electron;
@@ -72,6 +73,29 @@ try {
             createWindow();
         }
     });
+
+
+    const DatasourceService = require('./model/datasources.service');
+    const datasourceService = new DatasourceService();
+
+    ipcMain.on('datasources', (event, arg) => {
+        console.log(arg);
+        
+        switch (arg.method) {
+            case 'get':
+                datasourceService.getDatasources().then(res => {
+                    event.sender.send('datasources-reply', { status: 200, msg: res });
+                })
+                .catch(err => event.sender.send('datasources-reply', { status: 500, msg: err }))
+                break;
+            case 'add':
+                datasourceService.addDatasource(arg.datasource).then(res => {
+                    event.sender.send('datasources-reply', { status: 201, msg: `Datasource ${arg.datasource.name} created ok!` });
+                })
+                .catch(err => event.sender.send('datasources-reply', { status: 500, msg: err }))
+                break;
+        }
+    })
 } catch (e) {
     // Catch Error
     throw e;

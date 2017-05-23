@@ -1,0 +1,1 @@
+export type DatasourceEnum = 'mysql' | 'oracle' | 'ibm';

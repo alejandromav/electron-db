@@ -7,6 +7,17 @@ body {
     margin: 0;
 }
 
+#back {
+    position: absolute;
+    left: 16px;
+    font-size: 30px;    
+    color: rgba(44, 62, 93, 0.9);
+    margin-top: 16px;
+    opacity: .9;
+    cursor: pointer;
+    z-index: 999;
+}
+
 .green {
     /*color: #27ae60 !important;*/
     color: #2ecc71 !important;
@@ -33,8 +44,8 @@ body {
 
 
 .animated {
-    -webkit-animation-duration: .5s;
-    -moz-animation-duration: .5s;
-    -o-animation-duration: .5s;
-    animation-duration: .5s;
+    -webkit-animation-duration: .3s;
+    -moz-animation-duration: .3s;
+    -o-animation-duration: .3s;
+    animation-duration: .3s;
 }

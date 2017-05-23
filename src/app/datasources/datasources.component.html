@@ -1,0 +1,15 @@
+<div class="clearfix">
+    <a id="back" class="lnr lnr-chevron-left-circle" (click)="navigateTo('home')"></a>
+
+    <div class="datasource-container">
+        <div class="datasource new animated zoomIn">
+            <span class="lnr lnr-plus"></span>
+            <p class="name">Añadir nuevo</p>
+        </div><div class="datasource {{ datasource.type }} animated zoomIn" *ngFor="let datasource of datasources">
+            <span class="lnr lnr-database"></span>
+            <img [src]="'assets/img/' + datasource.type + '.png'" />
+            <p class="name">{{ datasource.name }}</p>
+        </div>
+    </div>
+
+</div>

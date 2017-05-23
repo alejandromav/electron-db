@@ -1,0 +1,3 @@
+{"name":"Exadata","password":"foo","type":"oracle","uri":"10.101.58.114:3006","user":"usergrid","createdAt":{"$$date":1495542635656},"_id":"q0tkSaFH9HoxAthA"}
+{"name":"Zara.com","password":"foo","type":"ibm","uri":"10.101.58.114:3006","user":"usergrid","createdAt":{"$$date":1495542635656},"_id":"q0tkSaFH9HoxAthC"}
+{"name":"Drive PRE","password":"foo","type":"mysql","uri":"10.101.58.114:3006","user":"usergrid","createdAt":{"$$date":1495542635656},"_id":"q0tkSaFH9HoxAthE"}

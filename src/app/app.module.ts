@@ -6,24 +6,36 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './home/home.component';
+import { DatasourcesComponent } from './datasources/datasources.component';
+import { QueryComponent } from './query/query.component';
+import { SettingsComponent } from './settings/settings.component';
+import { AboutComponent } from './about/about.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 
-import { ElectronService } from './providers/electron.service';
+import { ElectronService } from './services/electron.service';
+import { DatasourcesService } from './services/datasources.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DatasourcesComponent,
+    QueryComponent,
+    SettingsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    routing
   ],
-  providers: [ElectronService],
-  bootstrap: [AppComponent]
+  providers: [
+    ElectronService,
+    DatasourcesService
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
