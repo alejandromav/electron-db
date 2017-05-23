@@ -1,0 +1,10 @@
+<header id="menubar" *ngIf="isElectron">
+    <h1>electron-db</h1>
+
+    <button id="minimize" (click)="minimize()"></button>
+    <button id="maximize" (click)="maximize()"></button>
+    <button id="close" (click)="close()"></button>
+</header>
+
+<router-outlet></router-outlet>
+
