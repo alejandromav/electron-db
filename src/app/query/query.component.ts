@@ -9,6 +9,7 @@ declare var CodeFlask: any;
     styleUrls: ['./query.component.scss']
 })
 export class QueryComponent implements OnInit {
+    query: string;
 
     constructor(
         private router: Router
@@ -16,8 +17,11 @@ export class QueryComponent implements OnInit {
     }
 
     ngOnInit () {
-        var flask = new CodeFlask;
-        flask.run('#my-code-wrapper', { language: 'sql', lineNumbers: true })
+
+        setTimeout(() => {
+            var flask = new CodeFlask;
+            flask.run('#my-code-wrapper', { language: 'sql', lineNumbers: true });
+        });
     }
 
     navigateTo(path) {

@@ -1,7 +1,60 @@
 <div class="clearfix">
     <a id="back" class="lnr lnr-chevron-left-circle" (click)="navigateTo('home')"></a>
 
-    <div id="my-code-wrapper">select * from tmp.pedidos</div><div id="result">
+    <div class="left">
+        <header>Query</header>
+        <div id="my-code-wrapper"></div>
 
+        <footer>
+
+            <!--<div class="status connected"><span class="point"></span><p>conectado</p></div>-->
+            <div class="status disconnected"><span class="point"></span><p>desconectado</p></div>
+        </footer>
+    </div><div class="right">
+        <header>Vista previa</header>
+        <div id="preview">
+            <table>
+                <thead>
+                    <th>id_pedido</th>
+                    <th>codigo_pais</th>
+                    <th>unidades</th>
+                    <th>importe</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5264685856</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>1235</td>
+                    </tr>
+                    <tr>
+                        <td>5453125987</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>135</td>
+                    </tr>
+                    <tr>
+                        <td>5327456885</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>8476324748</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>235</td>
+                    </tr>
+                    <tr>
+                        <td>5236985475</td>
+                        <td>720</td>
+                        <td>6</td>
+                        <td>235</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer></footer>
     </div>
 </div>

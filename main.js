@@ -1,10 +1,6 @@
 try {
     const electron = require('electron');
-    const { ipcMain } = require('electron');
-
-    // Module to control application life.
     const { app } = electron;
-    // Module to create native browser window.
     const { BrowserWindow } = electron;
 
     let win, serve;
@@ -12,8 +8,7 @@ try {
     serve = args.some(val => val === "--serve");
 
     if (serve) {
-        require('electron-reload')(__dirname + '/dist', {
-        });
+        require('electron-reload')(__dirname + '/dist', { });
     }
 
     function createWindow() {
@@ -30,9 +25,7 @@ try {
             frame: false
         });
 
-        let url = serve ?
-            'file://' + __dirname + '/dist/index.html' :
-            'file://' + __dirname + '/index.html';
+        let url = serve ? 'file://' + __dirname + '/dist/index.html' : 'file://' + __dirname + '/index.html';
 
         // and load the index.html of the app.
         win.loadURL(url);
@@ -50,7 +43,6 @@ try {
             win = null;
         });
     }
-
 
     // This method will be called when Electron has finished
     // initialization and is ready to create browser windows.
@@ -74,28 +66,13 @@ try {
         }
     });
 
+    /**
+     *  REGISTER IPC CONTROLLERS
+     */
+    const DatasourceIPCController = require('./controllers/ipc-datasources.controller');
+    const datasourceIPCController = new DatasourceIPCController();
+    datasourceIPCController.register();
 
-    const DatasourceService = require('./model/datasources.service');
-    const datasourceService = new DatasourceService();
-
-    ipcMain.on('datasources', (event, arg) => {
-        console.log(arg);
-        
-        switch (arg.method) {
-            case 'get':
-                datasourceService.getDatasources().then(res => {
-                    event.sender.send('datasources-reply', { status: 200, msg: res });
-                })
-                .catch(err => event.sender.send('datasources-reply', { status: 500, msg: err }))
-                break;
-            case 'add':
-                datasourceService.addDatasource(arg.datasource).then(res => {
-                    event.sender.send('datasources-reply', { status: 201, msg: `Datasource ${arg.datasource.name} created ok!` });
-                })
-                .catch(err => event.sender.send('datasources-reply', { status: 500, msg: err }))
-                break;
-        }
-    })
 } catch (e) {
     // Catch Error
     throw e;

@@ -4,6 +4,7 @@
     width: 100%;
     height: 100vh;
     display: inline-flex;
+    color: rgba(44, 52, 62, .9);
     box-sizing: border-box;
     background: #fcfcfc;
     background: #222;
@@ -11,8 +12,9 @@
 #back {
     color: #fff;
 }
-#my-code-wrapper,
-#result {
+
+.clearfix .right,
+.clearfix .left {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -20,22 +22,122 @@
     height: 100%;
 }
 
-#result {
+.clearfix .right {
     background: #f7f7f7;
 }
 
-#my-code-wrapper {
+.clearfix > div > header {
+    padding: 16px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(44, 52, 62, .9);
+    height: 62px;
+    box-sizing: border-box;
+}
+.clearfix > div.left > header {
+    padding-left: 55px;
+    color: rgba(255,255,255,.9);
+}
+
+#my-code-wrapper,
+#preview {
     position: relative;
     display: block;
-    width: 50%;
-    padding: 40px;
-    height: 100%;
+    width: 100%;
+    height: calc(100% - 132px);
     box-sizing: border-box;
-    top: 40px;
-    margin-left: 40px;
-    // padding: 20px;
+    // top: 15px;
+    overflow: auto;
 }
 
 #my-code-wrapper textarea {
     color: #fff !important;
+}
+
+.clearfix > div > footer {
+    position: absolute;
+    bottom: 35px;
+    height: 35px;
+    width: 100%;
+    box-shadow: 0 -4px 8px -3px rgba(84, 84, 84, 0.2);
+    box-sizing: border-box;
+    border-right: 1px solid rgba(64,64,64,.2);
+    padding: 8px;
+}
+.clearfix > div:last-of-type > footer {
+    border: none;
+}
+.clearfix > div.left > footer {
+
+    background: #f7f7f7;
+}
+
+.clearfix > div.left > footer .status > *,
+.clearfix > div > footer > * {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 20px;
+}
+
+
+.clearfix > div.left > footer .status {
+    // float: right;
+    font-size: 12px;
+}
+.clearfix > div.left > footer .status > p {
+    margin: 0 4px;
+    font-weight: 500;
+}
+.clearfix > div.left > footer .status > .point {
+    height: 6px;
+    width: 6px;
+    border-radius: 10px;
+}
+
+
+.clearfix > div.left > footer .status.connected {
+    color: #27ae60;
+}
+.clearfix > div.left > footer .status.connected .point {
+    background: #27ae60;
+}
+.clearfix > div.left > footer .status.disconnected {
+    color: #e74c3c;
+}
+.clearfix > div.left > footer .status.disconnected .point {
+    background: #e74c3c;
+}
+.clearfix > div.left > footer .status.connecting {
+    color: #f39c12;
+}
+.clearfix > div.left > footer .status.connecting .point {
+    background: #f39c12;
+}
+
+#preview {
+    padding: 16px;
+    padding-top: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+#preview table {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    border-spacing: 0px;
+}
+
+#preview table th,
+#preview table td {
+    padding: 6px 4px;
+    border: 1px solid #ccc;
+}
+
+#preview table th {
+    font-weight: normal;
+    background: #262D3D;
+    color: rgba(255,255,255,.9);
 }
